@@ -144,28 +144,72 @@
     </nav>
 
 
+    <!--Imagem de apresentação-->
+
     <div class="bg-fixed-card w-100 mx-0">
       <div class="bg-fixed-card rounded shadow d-flex align-items-center">
         <div class="card-content p-4">
-          <h5 class="card-title">Card title</h5>
+          <h2 class="card-title">Fique por Dentro de <br>Tudo do Nosso Curso!</h2>
           <p class="card-text">
-            This is a wider card with supporting text below as a natural lead-in to additional content.
-            This content is a little bit longer.
+            Queremos que você aproveite ao máximo sua jornada acadêmica.<br>
+            Por isso, criamos este portal para ser o seu principal <br> canal de comunicação e estudos.
           </p>
           <p class="card-text"><small>Last updated 3 mins ago</small></p>
         </div>
       </div>
     </div>
 
-    <h2>kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
-      kkkkk
-    </h2>
-    <h2>kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
-      kkkkk
-    </h2>
-    <h2>kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
-      kkkkk
-    </h2>
+    <!--Notícias-->
+
+    <div class="container my-5">
+      <h2 class="mb-4">Últimas Notícias</h2>
+
+      <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-inner">
+
+          {% for grupo in noticias|batch(3, fill_with=None) %}
+          <div class="carousel-item {% if loop.first %}active{% endif %}">
+            <div class="row">
+              {% for noticia in grupo %}
+              {% if noticia %}
+              <div class="col-md-4">
+                <a href="{{ noticia.link }}" class="card-link">
+                  <div class="card card-hover shadow-sm">
+                    <img src="{{ url_for('static', filename='imagens/' + noticia.imagem) }}" class="card-img-top" alt="{{ noticia.titulo }}">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ noticia.titulo }}</h5>
+                      <p class="card-text">{{ noticia.descricao }}</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+    </div>
+
+    <!--Imagem de apresentação2-->
+
+    <div class="bg-fixed-card2 w-100 mx-0">
+      <div class="bg-fixed-card2 rounded shadow d-flex align-items-center">
+        <div class="card-content p-4">
+          <h2 class="card-title">Conhecendo o campus</h2>
+          <p class="card-text">
+            Explore cada canto do nosso campus e faça dele o seu lugar.<br>
+            Mais do que salas de aula, nosso campus é um universo de oportunidades.<br>
+            Descubra os melhores lugares para estudar, relaxar, encontrar amigos e viver<br>
+            experiências inesquecíveis. A sua jornada universitária acontece aqui!<br>
+          </p>
+          
+        </div>
+      </div>
+    </div>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>  
 </body>

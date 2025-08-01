@@ -32,52 +32,82 @@
 }
 
 .bg-fixed-card {
-    background-image: url('imagens/campus1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    height: 500px;
-    position: relative;
-    color: white;
-    width: 100%;
-  }
+  background-image: url('imagens/campus1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 500px;
+  position: relative;
+  color: white;
+  width: 100%;
+}
+.bg-fixed-card2 {
+  background-image: url('imagens/imagem3.jpg');
+  background-size: cover;
+  background-position: center;
+  
+  height: 300px;
+  position: relative;
+  color: white;
+  width: 100%;
+}
 
-  .bg-fixed-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.4); /* escurece a imagem */
-    z-index: 1;
-  }
+.bg-fixed-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* escurece a imagem */
+  z-index: 1;
+}
+.bg-fixed-card2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.13); /* escurece a imagem */
+  z-index: 1;
+}
 
-  .bg-fixed-card .card-content {
-    position: relative;
-    z-index: 2;
-  }
+.bg-fixed-card .card-content {
+  position: relative;
+  z-index: 2;
+}
+.bg-fixed-card2 .card-content {
+  position: relative;
+  z-index: 2;
+}
 
     /* Submenu dropdown */
-    .dropdown-submenu {
-      position: relative;
-    }
+.dropdown-submenu {
+  position: relative;
+}
 
-    .dropdown-submenu .dropdown-menu {
-      top: 0;
-      left: 100%;
-      margin-top: -1px;
-      display: none;
-    }
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+  display: none;
+}
 
-    .dropdown-submenu:hover .dropdown-menu {
-      display: block;
-    }
+.dropdown-submenu:hover .dropdown-menu {
+  display: block;
+}
 
     /* Garante que submenu não vá para fora da tela */
-    .dropdown-menu {
-      min-width: 200px;
-    }
+.dropdown-menu {
+  min-width: 200px;
+}
+      /* carrossel com notícias */
+.card-hover:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}   
 
 .container1{
-    width: 100%;
-    height:300px;
-    margin: 5px auto;
+  width: 100%;
+  height:300px;
+  margin: 5px auto;
 }
