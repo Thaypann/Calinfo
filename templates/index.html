@@ -173,8 +173,8 @@
               {% for noticia in grupo %}
               {% if noticia %}
               <div class="col-md-4">
-                <a href="{{ noticia.link }}" class="card-link">
-                  <div class="card card-hover shadow-sm">
+                <a href="{{ noticia.link }}" class="card-link text-decoration-none text-dark">
+                  <div class="card card-noticia shadow-sm">
                     <img src="{{ url_for('static', filename='imagens/' + noticia.imagem) }}" class="card-img-top" alt="{{ noticia.titulo }}">
                     <div class="card-body">
                       <h5 class="card-title">{{ noticia.titulo }}</h5>
@@ -209,6 +209,147 @@
         </div>
       </div>
     </div>
+
+    <!--Descrição da Infraestrutura-->
+    <!--Biblioteca -->
+    <div class="container my-5">
+      <div class="row align-items-center">
+        <!-- Texto à esquerda -->
+        <div class="col-md-6">
+          <h2 class="mb-3">Biblioteca José de Arimatéia Pereira</h2>
+          <p class="lead">
+            A Biblioteca José de Arimatéia Pereira do Campus Natal - Zona Norte do Instituto Federal de Educação, Ciência e
+            Tecnologia do Rio Grande do Norte tem como principal objetivo servir à comunidade acadêmica no que diz respeito ao
+            acesso e à disseminação da informação nos mais variados suportes informacionais. Além disso, vale salientar que
+            a biblioteca é totalmente automatizada por meio do Sistema Automatizado de Bibliotecas (SIABI), cujas funções
+            respondem pela operacionalização dos processos, em vigor desde o dia 16 de fevereiro de 2009.
+          </p>
+          <p class="lead">
+            <b>Funcionamento:</b> de segunda a sexta-feira, das 7h às 21h30min, ininterruptamente.
+          </p>
+          <p class="lead">
+            <b>Serviços:</b> empréstimo domiciliar, consulta ao acervo, reserva e renovação de materiais e orientação a trabalhos acadêmicos.
+          </p>
+          
+            
+        </div>
+
+        <!-- Imagem à direita -->
+        <div class="col-md-6 text-end">
+          <img src="{{ url_for('static', filename='imagens/campus2.png') }}" alt="Descrição da imagem" class="img-fluid img-fluid shadow rounded" style="max-width: 500px;">
+        </div>
+      </div>
+    </div>
+    <!--Imagens de exibição-->
+    <div class="container my-5">
+      <div class="row text-center">
+
+        <!-- Imagem 1 -->
+        <div class="col-md-4 mb-4">
+          <img src="{{ url_for('static', filename='imagens/campus2.png') }}" 
+              alt="Imagem 1"
+              class="img-fluid shadow rounded"
+              style="width: 300px; height: 200px; object-fit: cover;">
+        </div>
+
+        <!-- Imagem 2 -->
+        <div class="col-md-4 mb-4">
+          <img src="{{ url_for('static', filename='imagens/campus2.png') }}" 
+              alt="Imagem 2"
+              class="img-fluid shadow rounded"
+              style="width: 300px; height: 200px; object-fit: cover;">
+        </div>
+
+        <!-- Imagem 3 -->
+        <div class="col-md-4 mb-4">
+          <img src="{{ url_for('static', filename='imagens/campus2.png') }}" 
+              alt="Imagem 3"
+              class="img-fluid shadow rounded"
+              style="width: 300px; height: 200px; object-fit: cover;">
+        </div>
+
+      </div>
+    </div>
+
+    <!--Laboratórios-->
+    <div class="container my-5">
+      <div class="row align-items-center">
+        <!-- Texto à esquerda -->
+        <div class="col-md-6">
+          <h2 class="mb-3">Biblioteca José de Arimatéia Pereira</h2>
+          <p class="lead">
+            A Biblioteca José de Arimatéia Pereira do Campus Natal - Zona Norte do Instituto Federal de Educação, Ciência e
+            Tecnologia do Rio Grande do Norte tem como principal objetivo servir à comunidade acadêmica no que diz respeito ao
+            acesso e à disseminação da informação nos mais variados suportes informacionais. Além disso, vale salientar que
+            a biblioteca é totalmente automatizada por meio do Sistema Automatizado de Bibliotecas (SIABI), cujas funções
+            respondem pela operacionalização dos processos, em vigor desde o dia 16 de fevereiro de 2009.
+          </p>
+          <p class="lead">
+            <b>Funcionamento:</b> de segunda a sexta-feira, das 7h às 21h30min, ininterruptamente.
+          </p>
+          <p class="lead">
+            <b>Serviços:</b> empréstimo domiciliar, consulta ao acervo, reserva e renovação de materiais e orientação a trabalhos acadêmicos.
+          </p>
+          
+            
+        </div>
+
+        <!-- Imagem à direita -->
+        <div class="col-md-6 text-end">
+          <img src="{{ url_for('static', filename='imagens/campus2.png') }}" alt="Descrição da imagem" class="img-fluid img-fluid shadow rounded" style="max-width: 500px;">
+        </div>
+      </div>
+    </div>
+    <!--Imagens de exibição-->
+    <div class="container my-5">
+      <div class="row text-center">
+
+        <!-- Imagem 1 -->
+        <div class="col-md-4 mb-4">
+          <img src="{{ url_for('static', filename='imagens/campus2.png') }}" 
+              alt="Imagem 1"
+              class="img-fluid shadow rounded"
+              style="width: 300px; height: 200px; object-fit: cover;">
+        </div>
+
+        <!-- Imagem 2 -->
+        <div class="col-md-4 mb-4">
+          <img src="{{ url_for('static', filename='imagens/campus2.png') }}" 
+              alt="Imagem 2"
+              class="img-fluid shadow rounded"
+              style="width: 300px; height: 200px; object-fit: cover;">
+        </div>
+
+        <!-- Imagem 3 -->
+        <div class="col-md-4 mb-4">
+          <img src="{{ url_for('static', filename='imagens/campus2.png') }}" 
+              alt="Imagem 3"
+              class="img-fluid shadow rounded"
+              style="width: 300px; height: 200px; object-fit: cover;">
+        </div>
+
+      </div>
+    </div>
+
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+      <div class="container">
+        <h5 class="mb-3">CALINFO — Centro Acadêmico de Licenciatura em Informática</h5>
+        <p class="mb-1">
+          Instituto Federal de Educação, Ciência e Tecnologia do Estado do Rio Grande do Norte (IFRN)
+        </p>
+        <p class="mb-1">© 2025 CALINFO. Todos os direitos reservados.</p>
+        <p class="mb-0">
+          Contato: 
+          <a href="mailto:calinfo.ifzn@gmail.com" class="text-white text-decoration-underline">calinfo.ifzn@gmail.com</a> | 
+          Instagram: 
+          <a href="https://www.instagram.com/calinfo.ifzn/" target="_blank" class="text-white text-decoration-underline">@calinfo.ifzn</a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Scripts do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>  
