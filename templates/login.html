@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block conteudo %}
+
+
+<div class="imagem-fixed w-100 mx-0">
+    <div class="imagem-fixed rounded shadow d-flex align-items-center">
+    
+    </div>
+</div>
+
+<div class="container login-container">
+    <div class="login-card">
+      <h2 class="text-center mb-4">Login</h2>
+      <form method="POST">
+        <div class="mb-3">
+          <label>Email</label>
+          <input type="email" class="form-control" name="email" required>
+        </div>
+        <div class="mb-3">
+          <label>Senha</label>
+          <input type="password" class="form-control" name="senha" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Entrar</button>
+        <div class="text-center mt-3">
+          <a href="{{ url_for('cadastro') }}" class="btn btn-link">Não tem conta? Cadastre-se</a>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

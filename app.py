@@ -1,6 +1,27 @@
-from flask import Flask, render_template, flash, redirect, request, url_for
+from flask import Flask, render_template, redirect, url_for, request, flash
+from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager, login_user, login_required, logout_user, current_user
+from werkzeug.security import generate_password_hash, check_password_hash
+from models import db, Usuario
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'chave-secreta'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+db.init_app(app)
+
+login_manager = LoginManager(app)
+login_manager.login_view = 'login'
+
+@login_manager.user_loader
+def load_user(user_id):
+    return Usuario.query.get(int(user_id))
+
+@app.before_request
+def criar_tabelas_se_nao_existirem():
+    if not hasattr(app, 'tabelas_criadas'):
+        db.create_all()
+        app.tabelas_criadas = True
+
 
 @app.route('/')
 def index ():
@@ -17,3 +38,51 @@ def index ():
 @app.route('/professor')
 def professor ():
     return render_template('professores.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        email = request.form['email']
+        senha = request.form['senha']
+        usuario = Usuario.query.filter_by(email=email).first()
+        if usuario and check_password_hash(usuario.senha, senha):
+            login_user(usuario)
+            flash('Login realizado com sucesso!', 'success')
+            return redirect(url_for('index'))
+        flash('Email ou senha incorretos', 'danger')
+    return render_template('login.html')
+
+@app.route('/cadastro', methods=['GET', 'POST'])
+def cadastro():
+    if request.method == 'POST':
+        nome = request.form['nome']
+        email = request.form['email']
+        senha = request.form['senha']
+        if Usuario.query.filter_by(email=email).first():
+            flash('Email já cadastrado.', 'warning')
+            return redirect(url_for('cadastro'))
+        novo_usuario = Usuario(
+            nome=nome,
+            email=email,
+            senha=generate_password_hash(senha)
+        )
+        db.session.add(novo_usuario)
+        db.session.commit()
+        flash('Cadastro realizado com sucesso!', 'success')
+        return redirect(url_for('login'))
+    return render_template('cadastro.html')
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    flash('Você saiu com sucesso.', 'info')
+    return redirect(url_for('index'))
+
+@app.route('/usuarios')
+def lista_usuarios():
+    usuarios = Usuario.query.all()
+    return render_template('usuarios.html', usuarios=usuarios)
+
+if __name__ == '__main__':
+    app.run(debug=True)

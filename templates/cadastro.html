@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+<div class="imagem-fixed w-100 mx-0">
+  <div class="imagem-fixed rounded shadow d-flex align-items-center">
+    
+  </div>
+</div>
+
+
+<div class="container-flex mt-5 mb-5" style="height: calc(100vh - 130px);">
+  <div class="login-card">
+    <h2>Cadastro</h2>
+    <form method="POST">
+      <div class="mb-3">
+        <label>Nome</label>
+        <input type="text" class="form-control" name="nome" required>
+      </div>
+      <div class="mb-3">
+        <label>Email</label>
+        <input type="email" class="form-control" name="email" required>
+      </div>
+      <div class="mb-3">
+        <label>Senha</label>
+        <input type="password" class="form-control" name="senha" required>
+      </div>
+      <button type="submit" class="btn btn-success">Cadastrar</button>
+      <a href="{{ url_for('login') }}" class="btn btn-link">Já tem conta? Faça login</a>
+    </form>
+  </div>
+</div>
+{% endblock %}

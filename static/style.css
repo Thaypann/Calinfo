@@ -76,6 +76,26 @@
   z-index: 2;
 }
 
+/*imagem login/cadastro*/
+.imagem-fixed {
+  background-image: url('imagens/fundo.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 200px;
+  position: relative;
+  color: white;
+  width: 100%;
+}
+.imagem-fixed::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.13); /* escurece a imagem */
+  z-index: 1;
+}
+
+
     /* Submenu dropdown */
 .dropdown-submenu {
   position: relative;
@@ -130,6 +150,42 @@
   display: -webkit-box;
   -webkit-line-clamp: 3; /* mostra no máximo 3 linhas */
   -webkit-box-orient: vertical;
+}
+
+/* Card de login */
+
+ .login-container {
+      min-height: 80vh; /* dá espaço vertical para centralizar */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-card {
+      width: 100%;
+      max-width: 400px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      background-color: #ffffff;
+    }
+
+/*card de cadastro*/
+.container-flex {
+  display: flex;
+  height: 100%;
+  align-items: center;     /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  padding: 0 2rem;
+}
+
+.login-card {
+  max-width: 360px;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+  padding: 2rem;
+  height: fit-content;
 }
 
 .container1{
