@@ -95,6 +95,25 @@
   z-index: 1;
 }
 
+/* Imagem fixa da tela PROFESSORES */
+.imagem-fixed2 {
+  background-image: url('imagens/fundo.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 300px;
+  position: relative;
+  color: white;
+  width: 100%;
+}
+.imagem-fixed2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.13); /* escurece a imagem */
+  z-index: 1;
+}
+
 
     /* Submenu dropdown */
 .dropdown-submenu {
@@ -192,4 +211,45 @@
   width: 100%;
   height:300px;
   margin: 5px auto;
+}
+/* Card Professores */
+.custom-card .card {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+
+.custom-card .custom-img {
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+
+.custom-card .custom-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.35), rgba(0,0,0,0.05));
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+
+.custom-card:hover .card {
+  box-shadow: none;
+  transform: translateY(-3px);
+}
+
+
+.custom-card:hover .custom-img::after {
+  opacity: 0;
+}
+
+.card-body h5{
+  text-align: center;
+  background: rgba(255, 255, 255, 0.5);
 }
